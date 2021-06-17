@@ -1,0 +1,68 @@
+{% extends 'base_page.html' %}
+{% load static %}
+{% block content %}
+
+    <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+        <img src="{% static 'assets/img/members.jpg' %}" class="img-fluid"  loading="lazy" >
+    </div><!-- End Breadcrumbs -->
+
+        <section id="blog" class="blog">
+            <div class="container">
+
+        <div class="section-message">
+          <h2>Wishes</h2>
+        </div>
+
+                <div class="row">
+
+                    <div class="col-12 entries">
+
+                        <div class="row">
+                            {% for post in queryset %}
+                                <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+
+                                    <article class="entry">
+
+                                        <div class="entry-img">
+                                            <img src="{{ post.thumbnail.url }}" loading="lazy" alt="{{ post.title }}"
+                                                 title="{{ post.title }}" class="img-fluid">
+                                        </div>
+
+                                        <h2 class="entry-title">
+                                            <a href="{% url 'blog-detail' id=post.id %}">{{ post.title }}</a>
+                                        </h2>
+
+
+                                        <div class="entry-content">
+                                            <p>
+                                                {{ post.overview }}.
+                                            </p>
+                                            <div class="read-more">
+                                                <a href="{% url 'blog-detail' id=post.id %}">Open</a>
+                                            </div>
+                                        </div>
+
+                                    </article><!-- End blog entry -->
+
+                                </div>
+                            {% endfor %}
+
+
+                        </div>
+
+
+                    </div><!-- End blog entries list -->
+
+
+                </div>
+
+            </div>
+        </section><!-- End Blog Section -->
+
+
+    </main>
+
+{% endblock content %}

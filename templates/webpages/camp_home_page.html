@@ -1,0 +1,32 @@
+{% extends 'base_page.html' %}
+{% load static %}
+
+{% block content %}
+
+  <main id="main" data-aos="fade-in">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+        <img src="{{banner.url}}" class="img-fluid"  loading="lazy" >
+    </div><!-- End Breadcrumbs -->
+
+    <section id="services" class="services about">
+      <div class="container">
+
+
+      {% if camp_id == 1 %}
+        {% include 'include/sotp_heading.html' %}
+        <img src="{% static 'assets/img/gif.gif' %}" class="img-fluid"  loading="lazy" >
+        {% include 'include/sotp_buttons.html' %}
+      {% else %}
+        {% include 'include/gmcs_heading.html' %}
+        <img src="{% static 'assets/img/gmcs.gif' %}" class="img-fluid"  loading="lazy" >
+        {% include 'include/gmcs_buttons.html' %}
+      {% endif %}
+
+      </div>
+    </section>
+
+
+  </main><!-- End #main -->
+{% endblock content %}

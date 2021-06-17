@@ -1,0 +1,88 @@
+{% extends 'base_page.html' %}
+{% load static %}
+{% load crispy_forms_filters%}
+{% load crispy_forms_tags %} 
+
+{% block custom_css %}
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.16/css/bootstrap-multiselect.css" integrity="sha512-DJ1SGx61zfspL2OycyUiXuLtxNqA3GxsXNinUX3AnvnwxbZ+YQxBARtX8G/zHvWRG9aFZz+C7HxcWMB0+heo3w==" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.16/js/bootstrap-multiselect.js" integrity="sha512-5EvDL79fM8WJcOk77QpsZ8DawGlSfbOZ/ycRPz0bxRgtiOFEMj8taAoqmm7AR4p2N+A6VBLg/Ar30L8qbPw1pQ==" crossorigin="anonymous"></script>
+
+{% endblock custom_css %}
+
+{% block content %}
+
+
+  <main id="main" data-aos="fade-in">
+
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+        <img src="{{banner.url}}" class="img-fluid"  loading="lazy" >
+    </div><!-- End Breadcrumbs -->
+
+        <!-- ======= Trainers Section ======= -->
+    <section id="trainers" class="trainers">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-message">
+          <h2>{{camp.heading}}</h2>
+          <p>{{camp.sub_heading}}</p>
+        </div>
+
+{% if camp.is_open %}
+    <div class="col-lg-8 offset-lg-2 col-12">
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#boot-multiselect-demo').multiselect({
+                includeSelectAllOption: true,
+                buttonWidth: 250,
+                enableFiltering: true
+            });
+            });
+        </script>
+        <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {{form | crispy}}
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-block btn-danger">Submit</button>
+        </div>
+        </form>
+    </div>
+
+{% else %}
+
+{% if camp.error_image %}
+  <img src="{{camp.error_image.url}}" class="img-fluid"  loading="lazy" >
+{% else %}
+  <img src="{% static 'assets/img/coming.jpg' %}" class="img-fluid"  loading="lazy" >
+{% endif %}
+
+
+{% endif %}
+
+
+      </div>
+    </section><!-- End Trainers Section -->
+
+  </main><!-- End #main -->
+{% endblock content %}
+
+{% block custom_js %}
+<script>
+        $(function () {
+            $("#id_date_of_birth").datepicker({
+                dateFormat: 'yy-mm-dd',
+                changeMonth: true,
+                changeYear: true,
+                yearRange: "-100:+0",
+            }).attr("autocomplete", "off");
+});
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.js" integrity="sha512-s5u/JBtkPg+Ff2WEr49/cJsod95UgLHbC00N/GglqdQuLnYhALncz8ZHiW/LxDRGduijLKzeYb7Aal9h3codZA==" crossorigin="anonymous"></script>
+
+{% endblock custom_js %}

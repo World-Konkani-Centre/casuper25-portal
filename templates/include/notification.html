@@ -1,0 +1,27 @@
+{% load static %}
+<script>
+function show_toast(){
+  $.toast({
+    title: 'KSHAMATA',
+    subtitle: 'Just now',
+    content: 'You are not eligible to register for this Camp!!',
+    type: 'error',
+    delay: 10000
+  });
+}
+
+{% if messages %}
+{% for message in messages %}
+  $.toast({
+    title: '{{message.tags}}',
+    subtitle: 'Just now',
+    content: '{{ message }}',
+    type: '{{message.tags}}',
+    delay: 10000
+  });
+{% endfor %}
+{% endif %}
+            
+              
+          
+</script>

@@ -1,0 +1,162 @@
+{% extends 'base_page.html' %}
+{% load static %}
+
+{% block content %}
+
+
+  <main id="main" data-aos="fade-in">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+        <img src="{{banner.url}}" class="img-fluid"  loading="lazy" >
+    </div><!-- End Breadcrumbs -->
+
+        <!-- ======= Trainers Section ======= -->
+    <section id="trainers" class="trainers services">
+      <div class="container" data-aos="fade-up">
+            {% if camp_id == 1 %}
+              {% include 'include/sotp_heading.html' %}
+            {% else %}
+              {% include 'include/gmcs_heading.html' %}
+            {% endif %}
+
+        <div class="section-message">
+          <h2>LEADERBOARD</h2>
+        </div>
+
+      {% if display  or user.is_superuser%}
+
+      <div class="row" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-lg-6 col-12 order-1">
+            <div class="card mb-4 p-0">
+              <div class="card-header py-3">
+              <p class="font-weight-bold p-0 m-0 text-center text-uppercase underline highlight_text">Overall Team leaderboard</p>
+              </div>
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                  <table class="table table-hover table-light">
+                    <thead>
+                      <tr>
+                        <th scope="col">Rank</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Points</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    {% for row in teams %}
+                      <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <td>{{ row.name }}</td>
+                        <td>{{ row.team_points }}</td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-12 order-2">
+            <div class="card mb-4 p-0">
+              <div class="card-header py-3">
+              <p class="font-weight-bold p-0 m-0 text-center text-uppercase underline highlight_text">Overall Individual Leaderboard</p>
+              </div>
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                  <table class="table table-hover table-light">
+                    <thead>
+                      <tr>
+                        <th scope="col">Rank</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Team</th>
+                        <th scope="col">Points</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for row in profiles %}
+                      <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <td>{{ row.user.name }}</td>
+                          <td>{{ row.team }}</td>
+                        <td>{{ row.points }}</td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+      <div class="row" data-aos="zoom-in" data-aos-delay="100">
+          {% if team_profiles %}
+          <div class="col-lg-6 col-12 order-1">
+              <h2>{{ team_details.name }} - Individual details</h2>
+            <div class="table-responsive">
+              <table class="table table-hover table-dark">
+                <thead>
+                  <tr>
+                      <th scope="col">Team ranking</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Points</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {% for row in team_profiles %}
+                  <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{ row.user.name }}</td>
+                    <td>{{ row.points }}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+      {% endif %}
+      {% if team_details %}
+          <div class="col-lg-6 col-12 order-1">
+              <h2>{{ team_details.name }} - details</h2>
+            <div class="table-responsive">
+              <table class="table table-hover table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">Team</th>
+                    <th scope="col">Points</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{ team_details.name }}</td>
+                      <td>{{ team_details.team_points }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+      {% endif %}
+
+    </div>
+
+    {% else %}
+
+      <img src="{% static 'assets/img/coming.jpg' %}" class="img-fluid"  loading="lazy" >
+    
+    {% endif %}
+
+      {% if camp_id == 1 %}
+        {% include 'include/sotp_buttons.html' %}
+      {% else %}
+        {% include 'include/gmcs_buttons.html' %}
+      {% endif %}
+
+
+      </div>
+    </section><!-- End Trainers Section -->
+
+  </main><!-- End #main -->
+{% endblock content %}

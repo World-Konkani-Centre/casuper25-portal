@@ -1,0 +1,97 @@
+{% extends 'base_page.html' %}
+{% load static %}
+
+{% block content %}
+
+
+    <main id="main" data-aos="fade-in">
+
+        <!-- ======= Breadcrumbs ======= -->
+        <div class="breadcrumbs">
+            <img src="{{banner.url}}" class="img-fluid" loading="lazy">
+        </div><!-- End Breadcrumbs -->
+
+        <!-- ======= Trainers Section ======= -->
+        <section id="trainers" class="trainers services">
+            <div class="container" data-aos="fade-up">
+                      {% if camp_id == 1 %}
+        {% include 'include/sotp_heading.html' %}
+      {% else %}
+        {% include 'include/gmcs_heading.html' %}
+      {% endif %}
+
+
+                <div class="section-message">
+                    <h2>CAMPERS</h2>
+                </div>
+
+                <section id="schedule" class="section-with-bg services">
+                    <div class="container" data-aos="fade-up">
+
+                        <ul class="nav nav-tabs" role="tablist" data-aos="fade-up" data-aos-delay="100">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#campers" role="tab" data-toggle="tab">Campers</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#committee" role="tab" data-toggle="tab">Committee</a>
+                            </li>
+
+                        </ul>
+                        <div class="tab-content row justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                            <div role="tabpanel" class="tab-pane fade show active" id="campers">
+                                <div class="row">
+                                    {% for item in campers %}
+                                        <div class="col-lg-3 col-md-4 d-flex align-items-stretch text-center">
+                                            <div class="member text-center">
+                                                <img src="{{ item.user.image.url }}" class="img-fluid" alt="">
+                                                <div class="member-content">
+                                                    <h4>{{ item.user.name }}</h4>
+                                                    <span>{{ item.user.college_name }}</span>
+                                                    {% if item.team %}
+                                                        <span>Team {{ item.team }}</span>
+                                                    {% else %}
+                                                        <span>Team {{ item.team }}</span>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+                            <div role="tabpanel" class="tab-pane fade" id="committee">
+                                <div class="row">
+                                    {% for item in committee %}
+                                        <div class="col-lg-3 col-md-4 d-flex align-items-stretch text-center">
+                                            <div class="member text-center">
+                                                <img src="{{ item.user.image.url }}" class="img-fluid" alt="">
+                                                <div class="member-content">
+                                                    <h4>{{ item.user.name }}</h4>
+                                                    <span>{{ item.user.college_name }}</span>
+                                                    {% if item.team %}
+                                                        <span>Team {{ item.team }}</span>
+                                                    {% else %}
+                                                        <span>Team {{ item.team }}</span>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+                {% if camp_id == 1 %}
+                {% include 'include/sotp_buttons.html' %}
+                {% else %}
+                {% include 'include/gmcs_buttons.html' %}
+                {% endif %}
+
+            </div>
+        </section>
+    </main><!-- End #main -->
+{% endblock content %}

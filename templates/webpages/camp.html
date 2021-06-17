@@ -1,0 +1,173 @@
+{% extends 'base_page.html' %}
+{% load static %}
+
+{% block content %}
+  <main id="main" data-aos="fade-in">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+        <img src="{% static 'assets/img/banner.jpg' %}" class="img-fluid"  loading="lazy" >
+    </div><!-- End Breadcrumbs -->
+    
+    <!-- ======= Courses Section ======= -->
+    <section id="courses" class="courses">
+      <div class="container" data-aos="fade-up">
+        <div class="section-message">
+          <h2>LEADERSHIP EXPERIENCES</h2>
+          <p>KSHAMATA has designed these Leadership Experiences through Camps conducted periodically at World Konkani Centre, Mangaluru. The immersive experiences one go through these camps are immensely beneficial for personal growth and career perspective.</p>
+        </div>
+
+        <div class="row" data-aos="zoom-in" data-aos-delay="10">
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch p-0">
+            <div class="course-item">
+              <img src="{% static 'assets/img/camp/Gal2.jpg' %}" class="img-fluid" alt="...">
+              <div class="course-content">
+                <h2>SOTP</h2>
+                <h3>SCHOLARS ORIENTATION AND TRAINING PROGRAMME</h3>
+                <p>An initiation into the four-year development model for all scholarship participants to accomplish while in attendance. SOTP is a Three Day Residential Program for orientation towards Vision-TVM and a robust training package on Personal Effectiveness.</p>
+                {% if not request.user.is_authenticated %}
+                  <a href="{% url 'camp-register' %}" class="register">register</a>
+                {% else %}
+                  <a href="{% url 'camp-home' camp='sotp' %}" class="register">Open</a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch p-0">
+                <div class="course-item">
+                <img src="{% static 'assets/img/camp/Gal6.jpg' %}" class="img-fluid" alt="...">
+                <div class="course-content">
+                    <h2>SLSIP</h2>
+                    <h3>SCHOLARS LANGUAGE SKILLS IMMERSIVE PROGRAMME</h3>
+                    <p>Aimed at spoken and written communication skills as well as proficiency in English and Konkani. This program involves interactive classroom and labs activity.</p>
+                {% if not request.user.is_authenticated %}
+                  <a href="{% url 'camp-register' %}" class="register">register</a>
+                {% else %}
+                  <button id="register" onclick="show_toast()"  class="btn register">register</button>
+                {% endif %}
+                </div>
+                </div>
+            </div> <!-- End Course Item-->
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch p-0">
+            <div class="course-item">
+              <img src="{% static 'assets/img/camp/Gal7.jpg' %}" class="img-fluid" alt="...">
+              <div class="course-content">
+                <h2>GMCS</h2>
+                <h3>GENERAL MANAGEMENT AND COMMUNICATION SKILLS</h3>
+                <p>A three-day residential program focusing on General Management, Team Building, and Effective Communication Skills. It also involves individual grooming and mentorship.</p>
+                {% if not request.user.is_authenticated %}
+                  <a href="{% url 'camp-register' %}" class="register">register</a>
+                {% else %}
+                  <a href="{% url 'camp-home' camp='gmcs' %}" class="register">Open</a>
+                {% endif %}
+              </div>
+            </div>
+          </div> <!-- End Course Item-->
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch p-0">
+            <div class="course-item">
+              <img src="{% static 'assets/img/camp/Gal8.jpg' %}" class="img-fluid" alt="...">
+              <div class="course-content">
+                <h2>IPRS</h2>
+                <h3>INTERPERSONAL RELATIONSHIP SKILLS TRAINING</h3>
+                <p>A program that helps one to understand the concepts, especially skills and attributes associated with emotional intelligence or the ability to be able to understand and manage emotions.</p>
+                {% if not request.user.is_authenticated %}
+                  <a href="{% url 'camp-register' %}" class="register">register</a>
+                {% else %}
+                  <button id="register" onclick="show_toast()"  class="btn register">register</button>
+                {% endif %}
+              </div>
+            </div>
+          </div> <!-- End Course Item-->
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch p-0">
+            <div class="course-item">
+              <img src="{% static 'assets/img/camp/Gal3.jpg' %}" class="img-fluid" alt="...">
+              <div class="course-content">
+                <h2>SPPT</h2>
+                <h3>SCHOLARS PLACEMENT PREPARATION TRAINING</h3>
+                <p>A three Days Residential Program focusing on preparing the scholars for placements. Sessions include Interview Skills and Aptitude Test Coaching. Access to a premier Aptitude test module to sharpen their logical skills provided.</p>
+                {% if not request.user.is_authenticated %}
+                  <a href="{% url 'camp-register' %}" class="register">register</a>
+                {% else %}
+                  <button id="register" onclick="show_toast()"  class="btn register">register</button>
+                {% endif %}
+              </div>
+            </div>
+          </div> <!-- End Course Item-->
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch p-0">
+            <div class="course-item">
+              <img src="{% static 'assets/img/camp/Gal5.jpg' %}" class="img-fluid" alt="...">
+              <div class="course-content">
+                <h2>SORT</h2>
+                <h3>SCHOLARS ORGANISATIONAL READYNESS TRAINING</h3>
+                <p>A program aimed at equipping scholars with skills required for impactful entry into the corporate world. It gives the scholars an edge in understanding the workspace better.</p>
+                {% if not request.user.is_authenticated %}
+                  <a href="{% url 'camp-register' %}" class="register">register</a>
+                {% else %}
+                  <button id="register" onclick="show_toast()"  class="btn register">register</button>
+                {% endif %}
+              </div>
+            </div>
+          </div> <!-- End Course Item-->
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch p-0">
+            <div class="course-item">
+              <img src="{% static 'assets/img/camp/Gal10.jpg' %}" class="img-fluid" alt="...">
+              <div class="course-content">
+                <h2>KSHITIJ</h2>
+                <h3>SKILL DEVELOPMENT CAMPS</h3>
+                <p> A comprehensive life skill programme with an aim to open the horizons of the young scholars. This Camp inspires the young scholars to personally effective and make their student life productive.</p>
+                {% if not request.user.is_authenticated %}
+                  <a href="{% url 'camp-register' %}" class="register">register</a>
+                {% else %}
+                  <button id="register" onclick="show_toast()"  class="btn register">register</button>
+                {% endif %}
+              </div>
+            </div>
+          </div> <!-- End Course Item-->
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch p-0">
+            <div class="course-item">
+              <img src="{% static 'assets/img/camp/Gal9.jpg' %}" class="img-fluid" alt="...">
+              <div class="course-content">
+                <img src="{% static 'assets/img/camp/ugetin.svg' %}" class="img-fluid pb-2" width="80%">
+                {% comment %} <h3>SKILL DEVELOPMENT CAMPS</h3> {% endcomment %}
+                <p>Ugetin stands for Undergrads Employability Training Initiative. The six day camp is a stand alone programme covering training sessions under employability module.</p>
+                {% if not request.user.is_authenticated %}
+                  <a href="{% url 'camp-register' %}" class="register">register</a>
+                {% else %}
+                  <button id="register" onclick="show_toast()"  class="btn register">register</button>
+                {% endif %}
+              </div>
+            </div>
+          </div> <!-- End Course Item-->
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch p-0">
+            <div class="course-item">
+              <img src="{% static 'assets/img/camp/Gal11.jpg' %}" class="img-fluid" alt="...">
+              <div class="course-content">
+                <img src="{% static 'assets/img/camp/ugetin.svg' %}" class="img-fluid pb-2" width="80%">
+                <h3>Diamond</h3>
+                <p>Diamonds is a transformational 18 days comprehensive life skills programme for the graduates of KSHAMATA UGETIN. The Diamonds are shaped in a highly professional environment to fine tune their skills and ability to make them ready for the life ahead.</p>
+                {% if not request.user.is_authenticated %}
+                  <a href="{% url 'camp-register' %}" class="register">register</a>
+                {% else %}
+                  <button id="register" onclick="show_toast()"  class="btn register">register</button>
+                {% endif %}
+              </div>
+            </div>
+          </div> <!-- End Course Item-->
+
+        </div>
+
+
+      </div>
+    </section><!-- End Courses Section -->
+
+  </main><!-- End #main -->
+{% endblock content %}

@@ -1,0 +1,62 @@
+{% extends 'base_page.html' %}
+{% load static %}
+
+{% block content %}
+
+  <main id="main" data-aos="fade-in">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+        <img src="{{banner.url}}" class="img-fluid"  loading="lazy" >
+    </div><!-- End Breadcrumbs -->
+
+
+      <!-- ======= Events Section ======= -->
+    <section id="events" class="events services">
+      <div class="container" data-aos="fade-up">
+            {% if camp_id == 1 %}
+              {% include 'include/sotp_heading.html' %}
+            {% else %}
+              {% include 'include/gmcs_heading.html' %}
+            {% endif %}
+
+        <div class="section-message">
+          <h2>Events</h2>
+        </div>
+        {% if display  or user.is_superuser%}
+        <div class="row">
+
+        {% for event in events %}
+          <div class="col-md-6 d-flex align-items-stretch">
+            <div class="card">
+              <div class="card-img">
+                <img src="{{event.image.url}}" alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">{{event.name}}</h5>
+                {% if event.time %}
+                <p class="fst-italic text-center">{{event.time}}</p>
+                {% endif %}
+                {% if event.description %}
+                <p class="card-text">{{event.description}}</p>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+
+        </div>
+      {% else %}
+        <img src="{% static 'assets/img/coming.jpg' %}" class="img-fluid"  loading="lazy" >
+      {% endif %}
+
+        {% if camp_id == 1 %}
+          {% include 'include/sotp_buttons.html' %}
+        {% else %}
+          {% include 'include/gmcs_buttons.html' %}
+        {% endif %}
+      </div>
+    </section><!-- End Events Section -->
+
+  </main><!-- End #main -->
+{% endblock content %}

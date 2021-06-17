@@ -1,0 +1,59 @@
+{% extends 'base_page.html' %}
+{% load static %}
+
+{% block content %}
+
+  <main id="main" data-aos="fade-in">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+        <img src="{{banner.url}}" class="img-fluid"  loading="lazy" >
+    </div><!-- End Breadcrumbs -->
+
+    <section class="website services">
+      <div class="container" data-aos="fade-up">
+            {% if camp_id == 1 %}
+              {% include 'include/sotp_heading.html' %}
+            {% else %}
+              {% include 'include/gmcs_heading.html' %}
+            {% endif %}
+
+        <div class="section-message">
+          <h2>TEAMS</h2>
+          <p>Click on the Team Logos to visit Team Websites</p>
+        </div>
+
+    {% if display  or user.is_superuser%}
+
+        <div class="row" data-aos="zoom-in" data-aos-delay="10">
+
+        {% for page in websites %}
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-4">
+            <div class="card text-center" style="background-color: #0079c2">
+                <img src="{{page.image.url}}" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                </div>
+            <h2 class="card-title " style="font-size: 30px; font-weight: 800;  margin:0; padding:0; text-transform: uppercase;">
+            <a href="{{page.url}}" target="_blank" class="stretched-link" style="color: #fff;">{{page.name}}</a>
+            </h2>
+            </div>
+          </div>        
+        {% endfor %}
+
+        </div>
+    {% else %}
+      <img src="{% static 'assets/img/coming.jpg' %}" class="img-fluid"  loading="lazy" >
+    {% endif %}
+
+
+            {% if camp_id == 1 %}
+              {% include 'include/sotp_buttons.html' %}
+            {% else %}
+              {% include 'include/gmcs_buttons.html' %}
+            {% endif %}
+
+      </div>
+    </section><!-- End Courses Section -->
+
+  </main><!-- End #main -->
+{% endblock content %}

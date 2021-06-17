@@ -1,0 +1,43 @@
+{% extends 'base_page.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+  <main id="main" data-aos="fade-in">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+        <img src="{% static 'assets/img/hero-bg.jpg' %}" class="img-fluid"  loading="lazy" >
+    </div><!-- End Breadcrumbs -->
+
+        <!-- ======= Trainers Section ======= -->
+    <section id="trainers" class="trainers">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-message">
+          <h2>Login</h2>
+        </div>
+
+
+  <div class="col-lg-8 offset-lg-2 col-12">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-danger btn-block" type="submit">Login</button>
+            </div>
+        </form>
+
+      <p class="section-message">Forgot your password? <a href="{% url 'password_reset' %}">I can help</a></p>
+
+  </div>
+
+      </div>
+    </section><!-- End Trainers Section -->
+
+  </main><!-- End #main -->
+{% endblock content %}

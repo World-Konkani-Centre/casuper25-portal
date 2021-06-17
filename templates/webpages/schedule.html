@@ -1,0 +1,117 @@
+{% extends 'base_page.html' %}
+{% load static %}
+
+{% block content %}
+
+  <main id="main" data-aos="fade-in">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+        <img src="{{banner.url}}" class="img-fluid"  loading="lazy" >
+    </div><!-- End Breadcrumbs -->
+
+    <section id="services" class="services about">
+      <div class="container">
+            {% if camp_id == 1 %}
+              {% include 'include/sotp_heading.html' %}
+            {% else %}
+              {% include 'include/gmcs_heading.html' %}
+            {% endif %}
+
+      <div class="section-message">
+          <h2>SCHEDULE</h2>
+      </div>
+
+      </div>
+    </section>
+
+ 
+        <!-- ======= Schedule Section ======= -->
+    <section id="schedule" class="section-with-bg services">
+
+      <div class="container" data-aos="fade-up">
+      {% if display  or user.is_superuser%}
+        <ul class="nav nav-tabs" role="tablist" data-aos="fade-up" data-aos-delay="100">
+          <li class="nav-item">
+            <a class="nav-link active" href="#day-1" role="tab" data-toggle="tab">Day 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#day-2" role="tab" data-toggle="tab">Day 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#day-3" role="tab" data-toggle="tab">Day 3</a>
+          </li>
+        </ul>
+
+        <div class="tab-content row justify-content-center" data-aos="fade-up" data-aos-delay="200">
+
+          <!-- Schdule Day 1 -->
+          <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
+          
+          {% for entry in day_1 %}
+            <div class="row schedule-item">
+              <div class="col-md-5"><time>{{entry.timings}}</time></div>
+              <div class="col-md-6">
+                <h4>{{entry.event_name}}</h4>
+              </div>
+            </div>          
+          {% endfor %}
+
+          </div>
+          <!-- End Schdule Day 1 -->
+
+          <!-- Schdule Day 2 -->
+          <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-2">
+
+          {% for entry in day_2 %}
+            <div class="row schedule-item">
+              <div class="col-md-5"><time>{{entry.timings}}</time></div>
+              <div class="col-md-6">
+                <h4>{{entry.event_name}}</h4>
+              </div>
+            </div>          
+          {% endfor %}
+
+
+          </div>
+          <!-- End Schdule Day 2 -->
+
+          <!-- Schdule Day 3 -->
+          <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-3">
+          
+          {% for entry in day_3 %}
+            <div class="row schedule-item">
+              <div class="col-md-5"><time>{{entry.timings}}</time></div>
+              <div class="col-md-6">
+                <h4>{{entry.event_name}}</h4>
+              </div>
+            </div>          
+          {% endfor %}
+
+          </div>
+          <!-- End Schdule Day 3 -->
+
+        </div>
+      {% else %}
+           <img src="{% static 'assets/img/coming.jpg' %}" class="img-fluid"  loading="lazy" >
+      {% endif %}
+
+      {% if camp_id == 1 %}
+        {% include 'include/sotp_buttons.html' %}
+      {% else %}
+        {% include 'include/gmcs_buttons.html' %}
+      {% endif %}
+
+      </div>
+
+
+    </section><!-- End Schedule Section -->
+
+  
+
+
+
+
+
+  </main><!-- End #main -->
+{% endblock content %}

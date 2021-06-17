@@ -1,0 +1,104 @@
+{% extends 'base_page.html' %}
+{% load static %}
+
+{% block content %}
+
+
+  <main id="main" data-aos="fade-in">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+        <img src="{{banner.url}}" class="img-fluid"  loading="lazy" >
+    </div><!-- End Breadcrumbs -->
+
+    <!-- ======= Trainers Section ======= -->
+    <section id="trainers" class="trainers services">
+      <div class="container" data-aos="fade-up">
+            {% if camp_id == 1 %}
+              {% include 'include/sotp_heading.html' %}
+            {% else %}
+              {% include 'include/gmcs_heading.html' %}
+            {% endif %}
+        <div class="section-message">
+          <h2>AWARDS</h2>
+        </div>
+
+      {% if display  or user.is_superuser%}
+
+        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-lg-6 col-12 order-1">
+            <div class="card mb-4 p-0">
+              <div class="card-header py-3">
+                <h5 class="text-center text-bold p-0">TEAM AWARDS</h5>
+              </div>
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                  <table class="table table-hover table-bordered table-light">
+                    <thead>
+                      <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">Team</th>
+                        <th scope="col">Event</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    {% for row in teams %}
+                      <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <td>{{ row.team }}</td>
+                        <td>{{ row.heading }}</td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-12 order-2">
+            <div class="card mb-4 p-0">
+              <div class="card-header py-3">
+                <h5 class="text-center text-bold p-0">INDIVIDUAL AWARDS</h5>
+              </div>
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                  <table class="table table-hover table-bordered table-stiped table-light">
+                    <thead>
+                      <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">User</th>
+                        <th scope="col">Event</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    {% for row in users %}
+                      <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <td>{{ row.user.name }}</td>
+                        <td>{{ row.heading }}</td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      {% else %}
+           <img src="{% static 'assets/img/coming.jpg' %}" class="img-fluid"  loading="lazy" >    
+  
+      {% endif %}
+      {% if camp_id == 1 %}
+        {% include 'include/sotp_buttons.html' %}
+      {% else %}
+        {% include 'include/gmcs_buttons.html' %}
+      {% endif %}
+
+      </div>
+    </section><!-- End Trainers Section -->
+
+  </main><!-- End #main -->
+{% endblock content %}

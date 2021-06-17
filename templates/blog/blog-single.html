@@ -1,0 +1,110 @@
+{% extends 'base_page.html' %}
+{% load static %}
+
+
+
+
+
+{% block content %}
+    <main id="main">
+
+     <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+        <img src="{% static 'assets/img/members.jpg' %}" class="img-fluid"  loading="lazy" >
+    </div><!-- End Breadcrumbs -->
+
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Post a message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+
+        <div class="modal-body reply-form">
+            <form method="POST" action="">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col form-group">
+                        {{ form }}
+                    </div>
+                </div>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Post Comment</button>
+            </form>
+        </div>
+
+    </div>
+  </div>
+</div>
+
+        <!-- ======= Blog Section ======= -->
+        <section id="blog" class="blog">
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-12 entries" data-aos="fade-up">
+
+                        <article class="entry entry-single">
+
+                            <div class="entry-img text-center">
+                                <img src="{{ post.thumbnail.url }}" alt="{{ post.title }}" title="{{ post.title }}"
+                                     class="img-fluid">
+                            </div>
+
+                            <h2 class="entry-title">
+                                <a>{{ post.title }}</a>
+                            </h2>
+
+
+                            <div class="entry-content">
+                                {{ post.overview}}
+                            </div>
+
+                            <br>
+                            <br>
+                            <hr>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                            Post a message
+                            </button>
+
+
+                        </article><!-- End blog entry -->
+
+                        <div class="blog-comments">
+
+                            <h4 class="comments-count">{{ post.comments.count }} Wishes</h4>
+                            {% for comment in post.get_comments %}
+                                <div id="comment-1" class="comment clearfix">
+                                    <img src="{{ comment.user.image.url }}" class="comment-img  float-left" alt="">
+                                    <h5><a href="">{{ comment.user.name }}</a></h5>
+                                    <time datetime="2020-01-01">{{ comment.timestamp | timesince }} ago</time>
+                                    <p>
+                                        {{ comment.content }}
+                                    </p>
+                                </div>
+                            {% endfor %}
+
+
+
+                        </div><!-- End blog comments -->
+
+                    </div><!-- End blog entries list -->
+
+
+
+                </div>
+
+            </div>
+        </section><!-- End Blog Section -->
+
+
+    </main>
+
+{% endblock content %}

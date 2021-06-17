@@ -1,0 +1,44 @@
+{% extends 'base_page.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+  <main id="main" data-aos="fade-in">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+        <img src="{% static 'assets/img/hero-bg.jpg' %}" class="img-fluid"  loading="lazy" >
+    </div><!-- End Breadcrumbs -->
+
+        <!-- ======= Trainers Section ======= -->
+    <section>
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-message">
+          <h2>Please Select the camps that you want to register</h2>
+          <p>Please note if you are here for GMCS camp, please select that option only, don't select extra options.</p>
+        </div>
+
+
+  <div class="col-lg-8 offset-lg-2 col-12">
+  
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-danger btn-block" type="submit">Update your Camp preferance</button>
+            </div>
+        </form>
+
+
+  </div>
+
+      </div>
+    </section><!-- End Trainers Section -->
+
+  </main><!-- End #main -->
+{% endblock content %}
