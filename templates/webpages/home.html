@@ -7,13 +7,12 @@
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs">
     <picture>
-      <source media="(min-width: 480px)" srcset="{% static 'assets/img/hero-bg.jpg' %}" class="img-fluid"  loading="lazy" >
-      <img src="{% static 'assets/img/mobile-hero-bg.jpg' %}"  loading="lazy" class="img-fluid">
+      <source media="(min-width: 480px)" srcset="{% static 'assets/img/hero-bg.jpg' %}" class="img-fluid"  loading="lazy" draggable="false" onmousedown="return false" style="user-drag: none">
+      <img src="{% static 'assets/img/mobile-hero-bg.jpg' %}"  loading="lazy" class="img-fluid" draggable="false" onmousedown="return false" style="user-drag: none">
     </picture>
     </div><!-- End Breadcrumbs -->
     
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
+    <section id="home" class="home">
       <div class="container" >
 
         <div class="row">
@@ -21,146 +20,63 @@
             <img src="{% static 'assets/img/home_page.jpg' %}" class="img-fluid image" alt="">
           </div>
           <div class="col-lg-9 col-md-8 pt-4 pt-lg-0 order-2 order-lg-1 content">
-            <p>KSHAMATA stands for Konkani Student's Higher Achievement Motivation and Training Academy. Under the auspice of World Konkani Centre it has successfully built a series of training programmes and network of mentors since its inception in 2011.<br><br>The success of KSHAMATA is infact in the highly effective, scientifically designed training modules and a great amount of activities to enhance bonding and comradery among the scholars.</p>
+            <p>Vishwa Konkani Student Scholarship Fund is looking for 25 bright and talented Konkani Students who aspire to be the Chartered Accountants under its ambitious and innovative CA SUPER 25 Programme. <br>
+            CA SUPER 25 is a fully sponsored 4 years educational programme, formed by a group of Chartered Accountants under the auspice of World Konkani Centre, to empower talented rural youth from Konkani speaking communities across Karnataka.
+            </p>
           </div>
         </div>
 
       </div>
     </section><!-- End About Section -->
 
-    <!-- ======= Counts Section ======= -->
-    <section id="counts" class="counts section-bg">
+    <section id="programme" class="programme">
       <div class="container">
-
-        <div class="row counters">
-
-          <div class="col-lg-4 col-12 text-center">
-            <span data-toggle="counter-up">34858</span>
-            <p>MANDAYS</p>
-          </div>
-
-          <div class="col-lg-4 col-12 text-center">
-            <span data-toggle="counter-up">9373</span>
-            <p>TRAINEES</p>
-          </div>
-
-          <div class="col-lg-4 col-12 text-center">
-            <span data-toggle="counter-up">191</span>
-            <p>CAMPS</p>
-          </div>
-
-        </div>
-
+      
+      <div class="section-title">
+        <p>Programme</p>
       </div>
-    </section><!-- End Counts Section -->
-
-  {% for data in registration %}
-    <!-- ======= Cta Section ======= -->
-    <section id="cta" class="cta">
-      <div class="container" data-aos="fade-in">
-
-        <div class="text-center">
-          <h3>{{data.camp}}</h3>
-          <p>{{data.sub_heading}}</p>
-          <a class="cta-btn" href="{{data.registration_link}}">REGISTER NOW</a>
-        </div>
-
-      </div>
-    </section><!-- End Cta Section -->
-
-  {% endfor %}
-
-
-
-        <!-- ======= Venue Section ======= -->
-    <section id="venue">
-    <div class="container-fluid venue-gallery-container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row no-gutters">
-
-          <div class="col-lg-3 col-md-4">
-            <div class="venue-gallery">
-              <a href="{% url 'camp' %}"  data-gall="venue-gallery">
-                <img src="{% static 'assets/img/venue-gallery/1.jpg' %}" alt="" class="img-fluid">
-              </a>
+    
+        <div class="row icon-boxes">
+          <div class="col d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><img src="{% static 'assets/img/programme/education.png' %}" class="img-fluid"></div>
+              <div class="text-center"><h4 class="title"><a href="">scholarship</a></h4></div>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-4">
-            <div class="venue-gallery">
-              <a href="{% url 'camp' %}"   data-gall="venue-gallery">
-                <img src="{% static 'assets/img/venue-gallery/2.jpg' %}" alt="" class="img-fluid">
-              </a>
+          <div class="col d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><img src="{% static 'assets/img/programme/coach.png' %}" class="img-fluid"></div>
+              <div class="text-center"><h4 class="title"><a href="">coaching</a></h4></div>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-4">
-            <div class="venue-gallery">
-              <a href="{% url 'camp' %}"   data-gall="venue-gallery">
-                <img src="{% static 'assets/img/venue-gallery/3.jpg' %}" alt="" class="img-fluid">
-              </a>
+          <div class="col d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="400">
+            <div class="icon-box">
+              <div class="icon"><img src="{% static 'assets/img/programme/education-2.png' %}" class="img-fluid"></div>
+              <div class="text-center"><h4 class="title"><a href="">mentoring</a></h4></div>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-4">
-            <div class="venue-gallery">
-              <a href="{% url 'camp' %}"  data-gall="venue-gallery">
-                <img src="{% static 'assets/img/venue-gallery/4.jpg' %}" alt="" class="img-fluid">
-              </a>
+          <div class="col d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="500">
+            <div class="icon-box">
+              <div class="icon"><img src="{% static 'assets/img/programme/articleship.png' %}" class="img-fluid"></div>
+              <div class="text-center"><h4 class="title"><a href="">articleship</a></h4></div>
             </div>
           </div>
 
-        </div>
-      </div>
-
-    </section><!-- End Venue Section -->
-
-        <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container-fluid">
-
-        <div class="row justify-content-center">
-          <div class="col-lg-8 lg-offset-2 col-12 video-box d-flex justify-content-center align-items-stretch">
-            <a href="https://www.youtube.com/watch?v=3pDMLt4m7TU" class="venobox play-btn mb-4 stretched-link" data-vbtype="video" data-autoplay="true"></a>
+          <div class="col d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="500">
+            <div class="icon-box">
+              <div class="icon"><img src="{% static 'assets/img/programme/home.png' %}" class="img-fluid"></div>
+              <div class="text-center"><h4 class="title"><a href="">fostering</a></h4></div>
+            </div>
           </div>
-
-        </div>
 
       </div>
-    </section><!-- End About Section -->
-
-    <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Testimonials</h2>
-          <p>CAMPERS SAY</p>
-        </div>
-
-        <div class="owl-carousel testimonials-carousel" data-aos="zoom-in" data-aos-delay="100">
-
-{% for item in testimonial %}
-          <div class="testimonial-wrap">
-            <div class="testimonial-item">
-              <img src="{{item.image.url}}" class="testimonial-img" alt="">
-              <h3>{{item.name}}</h3>
-              <h4>{{item.role}}</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                {{item.testimonial}}
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-            </div>
-          </div>
-{% endfor %}
-
-
-
-
-        </div>
-
       </div>
-    </section><!-- End Testimonials Section -->
+    </section>
+
 
   </main><!-- End #main -->
 {% endblock content %}
+

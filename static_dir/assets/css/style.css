@@ -479,7 +479,7 @@ h6 {
 --------------------------------------------------------------*/
 
 section {
-    padding: 60px 0;
+    padding: 60px 0 20px 0;
     overflow: hidden;
 }
 
@@ -560,6 +560,47 @@ section {
     .breadcrumbs img {
         margin-top: 20px;
     }
+}
+
+
+/* Program */
+
+.programme .icon-boxes {
+    margin-top: 20px;
+}
+
+.programme .icon-box {
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    background: #ebece7;
+    box-shadow: 0 0 29px 0 rgba(18, 66, 101, 0.08);
+    transition: all 0.3s ease-in-out;
+    border-radius: 8px;
+    z-index: 1;
+}
+
+.programme .icon-box .icon {
+    margin-bottom: 15px;
+}
+
+.programme .icon-box .title {
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.programme .icon-box .title a {
+    color: #124265;
+    transition: 0.3s;
+}
+
+.programme .icon-box:hover {
+    transform: scale(1.08);
+}
+
+.programme .icon-box:hover .title a {
+    color: #2487ce;
 }
 
 
@@ -1753,14 +1794,46 @@ section {
 --------------------------------------------------------------*/
 
 #footer {
-    color: #37423b;
+    color: #fff;
     font-size: 14px;
-    background: #eef0ef;
+    background: #0F539C;
 }
 
-#footer .footer-top {
-    padding: 60px 0 30px 0;
-    background: #f9faf9;
+#footer .footer-top-stripe-1 {
+    padding: 7px;
+    background: #47B964;
+}
+
+#footer .footer-top-stripe-2 {
+    padding: 5px;
+    background: #17B361;
+}
+
+#footer .text-container {
+    text-transform: uppercase;
+}
+
+#footer .text-container h1 {
+    font-size: 40px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+}
+
+#footer .text-container h2 {
+    font-size: 30px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+}
+
+@media (max-width: 480px) {
+    #footer .text-container h1 {
+        font-size: 25px;
+        font-weight: 700;
+    }
+    #footer .text-container h2 {
+        font-size: 20px;
+        font-weight: 700;
+    }
 }
 
 #footer .footer-top .footer-contact {
