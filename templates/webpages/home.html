@@ -13,11 +13,13 @@
     </div><!-- End Breadcrumbs -->
     
     <section id="home" class="home">
-      <div class="container" >
+      <div class="container">
+
+
 
         <div class="row">
           <div class="col-lg-3 col-md-4 order-1 order-lg-2 text-center" data-aos="fade-left" data-aos-delay="100">
-            <img src="{% static 'assets/img/home_page.jpg' %}" class="img-fluid image" alt="">
+            <img src="{% static 'assets/img/home_page.jpg' %}" class="img-fluid image" loading="lazy"draggable="false" onmousedown="return false" style="user-drag: none">
           </div>
           <div class="col-lg-9 col-md-8 pt-4 pt-lg-0 order-2 order-lg-1 content">
             <p>Vishwa Konkani Student Scholarship Fund is looking for 25 bright and talented Konkani Students who aspire to be the Chartered Accountants under its ambitious and innovative CA SUPER 25 Programme. <br>
@@ -36,43 +38,85 @@
         <p>Programme</p>
       </div>
     
+      <div class="row">
+        <div class="col-12 text-center"><img src="{% static 'assets/img/logoo.png' %} " loading="lazy" class="img-fluid" draggable="false" onmousedown="return false" style="user-drag: none"></div>
+        <div class="col-12 text-block text-center"><h1>sponsorship porgramme for ca aspirants</h1></div>
+      </div>
+
+
         <div class="row icon-boxes">
           <div class="col d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><img src="{% static 'assets/img/programme/education.png' %}" class="img-fluid"></div>
-              <div class="text-center"><h4 class="title"><a href="">scholarship</a></h4></div>
+              <div class="text-center"><h4 class="title"><a  class="stretched-link">scholarship</a></h4></div>
             </div>
           </div>
 
           <div class="col d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="300">
             <div class="icon-box">
               <div class="icon"><img src="{% static 'assets/img/programme/coach.png' %}" class="img-fluid"></div>
-              <div class="text-center"><h4 class="title"><a href="">coaching</a></h4></div>
+              <div class="text-center"><h4 class="title"><a  class="stretched-link">coaching</a></h4></div>
             </div>
           </div>
 
           <div class="col d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="400">
             <div class="icon-box">
               <div class="icon"><img src="{% static 'assets/img/programme/education-2.png' %}" class="img-fluid"></div>
-              <div class="text-center"><h4 class="title"><a href="">mentoring</a></h4></div>
+              <div class="text-center"><h4 class="title"><a class="stretched-link">mentoring</a></h4></div>
             </div>
           </div>
 
           <div class="col d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="500">
             <div class="icon-box">
               <div class="icon"><img src="{% static 'assets/img/programme/articleship.png' %}" class="img-fluid"></div>
-              <div class="text-center"><h4 class="title"><a href="">articleship</a></h4></div>
+              <div class="text-center"><h4 class="title"><a class="stretched-link">articleship</a></h4></div>
             </div>
           </div>
 
           <div class="col d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="500">
             <div class="icon-box">
               <div class="icon"><img src="{% static 'assets/img/programme/home.png' %}" class="img-fluid"></div>
-              <div class="text-center"><h4 class="title"><a href="">fostering</a></h4></div>
+              <div class="text-center"><h4 class="title"><a class="stretched-link">fostering</a></h4></div>
             </div>
           </div>
 
-      </div>
+        </div>
+
+        <div class="row programme-content mt-4">
+          <div class="container">
+            <div class="d-flex align-items-center mb-2">
+              <i class='bx bxs-check-circle'></i>
+              <h4 id="sub-scholarship">SCHOLARSHIP</h4>
+            </div>
+            <p>The ICAI Fees towards CA Intermediate Exam, ICITSS, AICITSS and CA Finals Exam will be completely covered under CA Super 25 Programme. The Scholarship will also cover the cost of Coaching, Mentoring and Fostering under the programme. The total cost of the Scholarship per student will be to the tune of Rs. 4.00 Lakhs.</p>
+            <div class="d-flex align-items-center mb-2">
+              <i class='bx bxs-check-circle'></i>
+              <h4 id="sub-coaching">COACHING</h4>
+            </div>
+            <p>TWO Residential Camps of 3 months each running up to the CA Intermediate and CA Finals examinations. The Camps will have 750 hours of Coaching by experts on subjects under the syllabi.
+            TWO Residential Camps of 3 Days each will be conducted during 2nd and 3rd year to reinforce the concepts.
+            An Orientation Camp of 3 Days will be conducted at the beginning of the CA Super 25 programme to nurture a bond among the participants to enable peer to peer learning.
+            </p>
+            <div class="d-flex align-items-center mb-2">
+              <i class='bx bxs-check-circle'></i>
+              <h4 id="sub-mentoring">MENTORING</h4>
+            </div>
+            <p>The Students will be on boarded on to an online workspace to enable 365 days’ access to the Mentors on demand. 
+            One-On-One sessions with subject experts, senior Chartered Accountants and counsellors can be availed by the student to overcome academic, practical and mental roadblocks.
+            KT by Mentees: An unique way to encourage knowledge sharing among the mentees.
+            </p>
+            <div class="d-flex align-items-center mb-2">
+              <i class='bx bxs-check-circle'></i>
+              <h4 id="sub-articleship">ARTICLESHIP</h4>
+            </div>
+            <p>The students will be assisted to secure the Articleship under practicing Chartered Accountants</p>
+            <div class="d-flex align-items-center mb-2">
+              <i class='bx bxs-check-circle'></i>
+              <h4 id="sub-fostering">FOSTERING</h4>
+            </div>
+            <p>All outstation students will be provided Free Accommodation during the Articleship Period.</p>
+          </div>
+        </div>
       </div>
     </section>
 
