@@ -11,9 +11,9 @@
         <ul>
           <li><a href="#home">HOME</a></li>
           <li><a href="#programme">PROGRAMME</a></li>
-          <li><a href="{% url 'index' %}">ELIGIBILITY</a></li>
-          <li><a href="{% url 'index' %}">CALENDAR</a></li>
-          <li><a href="{% url 'index' %}">APPLY NOW</a></li>
+          <li><a href="#eligibility">ELIGIBILITY</a></li>
+          <li><a href="#calendar">CALENDAR</a></li>
+          <li><a href="#apply">APPLY NOW</a></li>
 
           {% if request.user.is_superuser %}
           <li class="drop-down"><a href="{% url 'profile' %}">Profile</a>

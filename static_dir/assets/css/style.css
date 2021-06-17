@@ -639,6 +639,62 @@ section {
 }
 
 
+/* eligibility */
+
+.eligibility h3 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    color: #17B361;
+}
+
+.eligibility .content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.eligibility .content ul li {
+    padding-bottom: 10px;
+}
+
+.eligibility .content ul i {
+    font-size: 20px;
+    padding-right: 4px;
+    color: #0A82D9;
+}
+
+
+/* calendar */
+
+.calendar .content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.calendar .content ul li {
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+
+.calendar .content ul i {
+    font-size: 25px;
+    padding-right: 4px;
+    color: #0A82D9;
+}
+
+
+/* Apply */
+
+.apply h3 {
+    margin-bottom: 10px;
+    font-size: 26px;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    color: #17B361;
+}
+
+
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
