@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Development
 SECRET_KEY = "123"
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = []
 
 # Production
@@ -28,7 +28,7 @@ INSTALLED_APPS = [
     'webpages.apps.WebpagesConfig',
     'rewards.apps.RewardsConfig',
     'users.apps.UsersConfig',
-    'grappelli',
+    # 'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
