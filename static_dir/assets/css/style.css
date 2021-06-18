@@ -608,11 +608,13 @@ section {
     padding: 20px;
     position: relative;
     overflow: hidden;
-    background: #ebece7;
-    box-shadow: 0 0 29px 0 rgba(18, 66, 101, 0.08);
     transition: all 0.3s ease-in-out;
     border-radius: 8px;
     z-index: 1;
+}
+
+.programme .icon-box img {
+    max-width: 180px;
 }
 
 .programme .icon-box .icon {
@@ -628,14 +630,6 @@ section {
 .programme .icon-box .title a {
     color: #124265;
     transition: 0.3s;
-}
-
-.programme .icon-box:hover {
-    transform: scale(1.08);
-}
-
-.programme .icon-box:hover .title a {
-    color: #2487ce;
 }
 
 
@@ -655,13 +649,18 @@ section {
 }
 
 .eligibility .content ul li {
-    padding-bottom: 10px;
+    padding: 5px 0 0 28px;
+    position: relative;
 }
 
 .eligibility .content ul i {
     font-size: 20px;
     padding-right: 4px;
     color: #0A82D9;
+    left: 0;
+    top: 7px;
+    position: absolute;
+    font-size: 20px;
 }
 
 
