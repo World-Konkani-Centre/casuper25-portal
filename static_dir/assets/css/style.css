@@ -563,6 +563,22 @@ section {
 }
 
 
+/* Home */
+
+.home p {
+    text-align: justify;
+    line-height: 28px;
+    font-size: larger;
+}
+
+@media (max-width: 480px) {
+    .home p {
+        font-size: medium;
+        line-height: 24px;
+    }
+}
+
+
 /* Program */
 
 .programme .icon-boxes {
@@ -582,6 +598,19 @@ section {
     text-transform: uppercase;
     padding: 0;
     margin: 0;
+}
+
+.programme .text-para {
+    text-align: justify;
+    line-height: 28px;
+    font-size: larger;
+}
+
+@media (max-width: 480px) {
+    .programme .text-para {
+        font-size: medium;
+        line-height: 24px;
+    }
 }
 
 .programme .programme-content h4 {
@@ -691,6 +720,34 @@ section {
     font-weight: 700;
     font-family: "Poppins", sans-serif;
     color: #17B361;
+}
+
+.apply .btn-apply-now {
+    margin-top: 30px;
+    line-height: 0;
+    padding: 15px 40px;
+    border-radius: 4px;
+    transition: 0.5s;
+    color: #fff;
+    background: #0F539C;
+    box-shadow: 0px 5px 30px #0a83d96b;
+}
+
+.apply .btn-apply-now span {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.apply .btn-apply-now i {
+    margin-left: 5px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.apply .btn-apply-now:hover i {
+    transform: translateX(5px);
 }
 
 
