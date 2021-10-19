@@ -2,7 +2,7 @@
 <h3 align="center">VISHWA KONKANI SCHOLARSHIP PROGRAMME</h3>
 
 <p align="center"> 
- <img src="https://i.ibb.co/MZt9JfH/logoo.png" alt="Sushiksha-lOGO" border="0" width=500/>&nbsp; </a></p>
+ <img src="https://i.ibb.co/MZt9JfH/logoo.png" alt="Sushiksha-lOGO" border="0" width=600/>&nbsp; </a></p>
 
 <!-- Repo detail Stickers -->
 <p align="center">                          
