@@ -1,8 +1,8 @@
 # casuper25
-VISHWA KONKANI SCHOLARSHIP PROGRAMME.
+<h3 align="center">VISHWA KONKANI SCHOLARSHIP PROGRAMME</h3>
 
 <p align="center"> 
- <img src="https://i.ibb.co/MZt9JfH/logoo.png" alt="Sushiksha-lOGO" border="0" width=700/>&nbsp; </a></p>
+ <img src="https://i.ibb.co/MZt9JfH/logoo.png" alt="Sushiksha-lOGO" border="0" width=600/>&nbsp; </a></p>
 
 <!-- Repo detail Stickers -->
 <p align="center">                          
@@ -138,3 +138,5 @@ VISHWA KONKANI SCHOLARSHIP PROGRAMME.
    Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change in the project.
 
 <br>
+
+<h1 align="center">__ THANK YOU __</h1>
